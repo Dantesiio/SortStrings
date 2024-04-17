@@ -1,0 +1,13 @@
+<state>
+  <timestamp value='1712785719240' />
+  <sourceSet name='default'>
+    <source name='/home/computacion/Documents/compu/sesion17/introIce/Printer.ice'>
+      <file name='/home/computacion/Documents/compu/sesion17/introIce/client/build/generated-src/Demo/Message.java' />
+      <file name='/home/computacion/Documents/compu/sesion17/introIce/client/build/generated-src/Demo/Printer.java' />
+      <file name='/home/computacion/Documents/compu/sesion17/introIce/client/build/generated-src/Demo/PrinterPrx.java' />
+      <file name='/home/computacion/Documents/compu/sesion17/introIce/client/build/generated-src/Demo/_PrinterPrxI.java' />
+    </source>
+    <arg value='/opt/Ice-3.7.6/bin/slice2java' />
+    <arg value='-I/opt/Ice-3.7.6/slice' />
+  </sourceSet>
+</state>
