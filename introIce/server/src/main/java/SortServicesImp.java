@@ -2,15 +2,43 @@ import Demo.SortServices;
 import com.zeroc.Ice.Current;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class SortServicesImp implements SortServices {
 
 
+    public ArrayList bucketSort(ArrayList list, Current current) {
+        //ArrayList<String> sortList = ((ArrayList<String>) list);
+        //Collections.sort(sortList);
+        return list;
+    }
 
     @Override
-    public String bucketSort(ArrayList[] list, int buckets, Current current) {
-        return null;
+    public ArrayList<String> bucketSort(List<String> list, Current current) {
+        ArrayList<String> sortedList = new ArrayList<>(list);
+        //Collections.sort(sortedList);
+        Collections.sort(sortedList, new SumaCaracteresComparator());
+        return sortedList;
+    }
+}
+
+class SumaCaracteresComparator implements Comparator<String> {
+    @Override
+    public int compare(String s1, String s2) {
+        int sumaCaracteresS1 = calcularSumaCaracteres(s1);
+        int sumaCaracteresS2 = calcularSumaCaracteres(s2);
+        return Integer.compare(sumaCaracteresS1, sumaCaracteresS2);
+    }
+
+    // Método para calcular la suma de los valores ASCII de los caracteres de una cadena
+    private int calcularSumaCaracteres(String s) {
+        int suma = 0;
+        for (char c : s.toCharArray()) {
+            suma += (int) c;
+        }
+        return suma;
     }
 }
 
@@ -71,9 +99,9 @@ public class SortServicesImp implements SortServices {
 
 
 
-        
-        
-        
+
+
+
 
 
 

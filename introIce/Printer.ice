@@ -4,9 +4,18 @@ module Demo
     sequence<ArrInt> MatrInt;
     sequence<string> ArrString;
 
+    ["java:type:java.util.ArrayList<String>"]
+    sequence<string> ArrayList;
+    ["java:type:java.util.ArrayList<String>"]
+    sequence<string> ArrayReturn;
+
+
+
     ["java:serializable:java.util.ArrayList"]
-    sequence<byte> ArrayList;
+    sequence<byte> Array2;
+
     sequence<ArrayList> ListArray;
+    sequence<string> ListReturn;
 
     class Message{
 	    string msg;
@@ -23,6 +32,6 @@ module Demo
     }
 
     interface SortServices{
-        string bucketSort(ListArray list, int buckets);
+        ArrayReturn bucketSort(ArrayList list);
     }
 }

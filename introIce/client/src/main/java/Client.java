@@ -15,6 +15,7 @@ public class Client
         {
             com.zeroc.Ice.ObjectPrx base = communicator.propertyToProxy("server.proxy");
             Demo.PrinterPrx printer = Demo.PrinterPrx.checkedCast(base);
+
             if(printer == null)
             {
                 throw new Error("Invalid proxy");
@@ -35,32 +36,43 @@ public class Client
 
 
 
-            int bucketAmount = 1;
+                int bucketAmount = 2;
 
-            List<String> strings = Arrays.asList("apple", "banana", "cherry", "date");
-            int maxAsciiValue = findMax(strings);
-            System.out.println("Max value" +maxAsciiValue);
+                List<String> strings = Arrays.asList("zzzz", "cherry", "banana", "apple");
+                int maxAsciiValue = findMax(strings);
+                System.out.println("Max value" +maxAsciiValue);
 
-            int minAsciiValue = findMin(strings);
-            System.out.println("Min value" + minAsciiValue);
+                int minAsciiValue = findMin(strings);
+                System.out.println("Min value" + minAsciiValue);
 
-            int range = maxAsciiValue - minAsciiValue;
+                int range = maxAsciiValue - minAsciiValue;
 
-            int bucketRange = (int) Math.ceil((double) range/bucketAmount);
+                System.out.println("range "+range);
 
-            List<String>[] buckets = new List[bucketAmount];
+                int bucketRange = (int) Math.ceil((double) range/bucketAmount);
 
-            for (int i = 0; i < bucketAmount; i++) {
-                buckets[i] = new ArrayList<>();
+            System.out.println("bucketRange "+bucketRange);
+
+                ArrayList<String>[] buckets = new ArrayList[bucketAmount];
+
+                for (int i = 0; i < bucketAmount; i++) {
+                    buckets[i] = new ArrayList<>();
+                }
+
+                for (String string : strings) {
+                    //System.out.println(divideNumBuckets(string, bucketRange, bucketAmount));
+                    buckets[divideNumBuckets(string, bucketRange, bucketAmount)].add(string);
+                }
+
+                System.out.println(buckets[0]);
+                System.out.println(buckets[1]);
+
+
+                //sortPrx.bucketSort(buckets);
+                System.out.println("Lista ordenada" + Arrays.toString(sortPrx.bucketSort(buckets[1]).toArray()));
+
+
             }
-
-            for (String string : strings) {
-                buckets[divideNumBuckets(string, bucketRange, bucketAmount)].add(string);
-            }
-
-
-
-        }
     }
 
     public static int findMax(List<String> strings) {
@@ -102,9 +114,12 @@ public class Client
 
     public static int divideNumBuckets(String string, int bucketRange, int bucketAmount){
         int stringToInt = getAsciiValue(string);
+        System.out.println("toInt" + stringToInt);
         int bucketNumber = stringToInt / bucketRange;
-        if(bucketNumber == bucketAmount){
-            bucketNumber--;
+        System.out.println("bucketNumber" + bucketNumber);
+        // Asegurarse de que el número de bucket no exceda bucketAmount - 1
+        if (bucketNumber >= bucketAmount){
+            bucketNumber = bucketAmount - 1;
         }
         return bucketNumber;
     }
