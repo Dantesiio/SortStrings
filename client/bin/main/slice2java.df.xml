@@ -1,0 +1,23 @@
+<state>
+  <timestamp value='1714517422297' />
+  <sourceSet name='default'>
+    <source name='/home/computacion/Desktop/SortStrings/introIce/Printer.ice'>
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/Message.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/Printer.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/MathServices.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/SortServices.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/MatrIntHelper.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/ArrayListHelper.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/ArrayReturnHelper.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/ListArrayHelper.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/PrinterPrx.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/_PrinterPrxI.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/MathServicesPrx.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/_MathServicesPrxI.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/SortServicesPrx.java' />
+      <file name='/home/computacion/Desktop/SortStrings/introIce/client/build/generated-src/Demo/_SortServicesPrxI.java' />
+    </source>
+    <arg value='/opt/Ice-3.7.6/bin/slice2java' />
+    <arg value='-I/opt/Ice-3.7.6/slice' />
+  </sourceSet>
+</state>
